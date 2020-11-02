@@ -1,25 +1,22 @@
-import React from 'react'
-import Rating from './Rating';
-import {Link} from 'react-router-dom'
+import React from "react";
+import Rating from "./Rating";
+import { Link } from "react-router-dom";
 
-function Product({product}) {
-    return (
-        <div key={product._id} className="card card-body">
-            <Link to={`/product/${product._id}`}>
-                <img className='medium' src={product.image} alt={product.name} />
-            </Link>
-            <div className="card-body">
-            <Link to={`/product/${product._id}`}>
-                <h2>{product.name}</h2>
-            </Link>
-            </div>
-            <Rating
-            rating={product.rating}
-            numReviews={product.numReviews}
-            />
-            <div className="price">${product.price}</div>
-        </div>
-    )
+function Product({ product }) {
+  return (
+    <div key={product._id} className="card card-body">
+      <Link to={`/product/${product._id}`}>
+        <img className="medium" src={product.image} alt={product.name} />
+      </Link>
+      <div className="card-body">
+        <Link to={`/product/${product._id}`}>
+          <h2>{product.name}</h2>
+        </Link>
+      </div>
+      <Rating rating={product.rating} numReviews={product.numReviews} />
+      <div className="price">${product.price}</div>
+    </div>
+  );
 }
 
-export default Product
+export default Product;
